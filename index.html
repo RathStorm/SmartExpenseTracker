@@ -1,0 +1,1721 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farm Expense Tracker</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Landing Page -->
+    <div id="landing-page" class="page active">
+        <div class="container">
+            <header class="header">
+                <div class="logo">
+                    <i class="fas fa-tractor"></i>
+                    <span>FarmExpense AI</span>
+                </div>
+                <nav class="nav" id="auth-nav">
+                    <button class="nav-btn" data-page="login">Login</button>
+                    <button class="nav-btn primary" data-page="signup">Sign Up</button>
+                </nav>
+                <nav class="nav" id="user-nav" style="display: none;">
+                    <button class="nav-btn" data-page="dashboard">Dashboard</button>
+                    <span id="user-greeting">Welcome, User</span>
+                    <button id="logout-btn" class="nav-btn">Logout</button>
+                </nav>
+            </header>
+
+            <main class="main">
+                <div class="hero">
+                    <h1>Smart Farm Expense Tracking</h1>
+                    <p>Track, analyze, and optimize your farm expenses with AI-powered insights</p>
+                    <div class="hero-stats">
+                        <div class="stat">
+                            <span class="stat-number">98%</span>
+                            <span class="stat-label">Accuracy</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">24/7</span>
+                            <span class="stat-label">Access</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">∞</span>
+                            <span class="stat-label">Storage</span>
+                        </div>
+                    </div>
+                    <button class="cta-btn" data-page="signup">Get Started</button>
+                </div>
+
+                <!-- Features Section -->
+                <section class="features-section">
+                    <div class="container">
+                        <h2>Why Choose FarmExpense AI?</h2>
+                        <div class="features-grid">
+                            <div class="feature-card">
+                                <div class="feature-icon">
+                                    <i class="fas fa-brain"></i>
+                                </div>
+                                <h3>AI-Powered Insights</h3>
+                                <p>Get intelligent predictions and recommendations to optimize your farm's financial performance.</p>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">
+                                    <i class="fas fa-chart-line"></i>
+                                </div>
+                                <h3>Real-Time Analytics</h3>
+                                <p>Monitor expenses, revenues, and profitability with interactive charts and detailed reports.</p>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">
+                                    <i class="fas fa-cow"></i>
+                                </div>
+                                <h3>Livestock Management</h3>
+                                <p>Track livestock purchases, health costs, and calculate cost per head for better decision making.</p>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">
+                                    <i class="fas fa-mobile-alt"></i>
+                                </div>
+                                <h3>Mobile Friendly</h3>
+                                <p>Access your farm data anywhere, anytime with our responsive web application.</p>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">
+                                    <i class="fas fa-shield-alt"></i>
+                                </div>
+                                <h3>Secure & Private</h3>
+                                <p>Your farm data is encrypted and stored securely with enterprise-grade security.</p>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">
+                                    <i class="fas fa-cogs"></i>
+                                </div>
+                                <h3>Automation Ready</h3>
+                                <p>Integrate with N8N workflows for automated alerts, reports, and business processes.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- How It Works Section -->
+                <section class="how-it-works-section">
+                    <div class="container">
+                        <h2>How It Works</h2>
+                        <div class="steps-grid">
+                            <div class="step">
+                                <div class="step-number">1</div>
+                                <h3>Sign Up</h3>
+                                <p>Create your farm account and set up your budget in minutes.</p>
+                            </div>
+                            <div class="step">
+                                <div class="step-number">2</div>
+                                <h3>Track Expenses</h3>
+                                <p>Log all farm expenses including feed, equipment, veterinary costs, and more.</p>
+                            </div>
+                            <div class="step">
+                                <div class="step-number">3</div>
+                                <h3>Monitor Performance</h3>
+                                <p>View real-time analytics and AI predictions to optimize your operations.</p>
+                            </div>
+                            <div class="step">
+                                <div class="step-number">4</div>
+                                <h3>Make Better Decisions</h3>
+                                <p>Use insights to reduce costs and increase profitability.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Testimonials Section -->
+                <section class="testimonials-section">
+                    <div class="container">
+                        <h2>What Farmers Say</h2>
+                        <div class="testimonials-grid">
+                            <div class="testimonial-card">
+                                <div class="testimonial-content">
+                                    <p>"FarmExpense AI has transformed how I manage my farm finances. The AI insights helped me reduce feed costs by 15%."</p>
+                                </div>
+                                <div class="testimonial-author">
+                                    <div class="author-avatar">
+                                        <i class="fas fa-user"></i>
+                                    </div>
+                                    <div class="author-info">
+                                        <h4>John Smith</h4>
+                                        <span>Cattle Rancher, Texas</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="testimonial-card">
+                                <div class="testimonial-content">
+                                    <p>"The livestock tracking feature is incredible. I can now see exactly how much each animal costs me and optimize my herd."</p>
+                                </div>
+                                <div class="testimonial-author">
+                                    <div class="author-avatar">
+                                        <i class="fas fa-user"></i>
+                                    </div>
+                                    <div class="author-info">
+                                        <h4>Maria Garcia</h4>
+                                        <span>Dairy Farmer, California</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="testimonial-card">
+                                <div class="testimonial-content">
+                                    <p>"Finally, a farm management tool that understands farming. The automation features save me hours every week."</p>
+                                </div>
+                                <div class="testimonial-author">
+                                    <div class="author-avatar">
+                                        <i class="fas fa-user"></i>
+                                    </div>
+                                    <div class="author-info">
+                                        <h4>Robert Johnson</h4>
+                                        <span>Crop Farmer, Iowa</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+
+            <!-- Footer -->
+            <footer class="footer">
+                <div class="container">
+                    <div class="footer-content">
+                        <div class="footer-section">
+                            <div class="footer-logo">
+                                <i class="fas fa-tractor"></i>
+                                <span>FarmExpense AI</span>
+                            </div>
+                            <p>Smart farming expense management with AI-powered insights.</p>
+                        </div>
+                        <div class="footer-section">
+                            <h4>Product</h4>
+                            <ul>
+                                <li><a href="#features">Features</a></li>
+                                <li><a href="#pricing">Pricing</a></li>
+                                <li><a href="#integrations">Integrations</a></li>
+                                <li><a href="#api">API</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-section">
+                            <h4>Support</h4>
+                            <ul>
+                                <li><a href="#help">Help Center</a></li>
+                                <li><a href="#docs">Documentation</a></li>
+                                <li><a href="#contact">Contact Us</a></li>
+                                <li><a href="#status">System Status</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-section">
+                            <h4>Company</h4>
+                            <ul>
+                                <li><a href="#about">About</a></li>
+                                <li><a href="#blog">Blog</a></li>
+                                <li><a href="#careers">Careers</a></li>
+                                <li><a href="#press">Press</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="footer-bottom">
+                        <p>&copy; 2024 FarmExpense AI. All rights reserved.</p>
+                        <div class="footer-links">
+                            <a href="#privacy">Privacy Policy</a>
+                            <a href="#terms">Terms of Service</a>
+                            <a href="#cookies">Cookie Policy</a>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <!-- Login Page -->
+    <div id="login-page" class="page">
+        <div class="container">
+            <div class="auth-card">
+                <h2>Login to Your Account</h2>
+                <form id="login-form">
+                    <div class="form-group">
+                        <label for="login-email">Email</label>
+                        <input type="email" id="login-email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="login-password">Password</label>
+                        <input type="password" id="login-password" name="password" required>
+                    </div>
+                    <button type="submit" class="btn primary">Login</button>
+                </form>
+                <p class="auth-link">Don't have an account? <a href="#" class="btn secondary" data-page="signup">Sign up</a></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Signup Page -->
+    <div id="signup-page" class="page">
+        <div class="container">
+            <div class="auth-card">
+                <h2>Create Your Account</h2>
+                <form id="signup-form">
+                    <div class="form-group">
+                        <label for="signup-name">Full Name</label>
+                        <input type="text" id="signup-name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="signup-email">Email</label>
+                        <input type="email" id="signup-email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="signup-farm">Farm Name</label>
+                        <input type="text" id="signup-farm" name="farm" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="signup-password">Password</label>
+                        <input type="password" id="signup-password" name="password" required>
+                    </div>
+                    <button type="submit" class="btn primary">Sign Up</button>
+                </form>
+                <p class="auth-link">Already have an account? <a href="#" class="btn secondary" data-page="login">Login</a></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Dashboard Page -->
+    <div id="dashboard-page" class="page">
+        <div class="container">
+            <header class="header">
+                <div class="logo">
+                    <i class="fas fa-tractor"></i>
+                    <span>FarmExpense AI</span>
+                </div>
+                <nav class="nav" id="dashboard-nav">
+                    <button class="nav-btn" data-page="landing"><i class="fas fa-home"></i> Home</button>
+                    <button class="nav-btn active" data-page="dashboard">Dashboard</button>
+                    <button class="nav-btn" data-page="livestock">Livestock</button>
+                    <button class="nav-btn" data-page="processing">Processing</button>
+                    <button class="nav-btn" data-page="logistics">Logistics</button>
+                    <button class="nav-btn" data-page="settings">Settings</button>
+                    <button id="theme-toggle" class="nav-btn"><i class="fas fa-moon"></i></button>
+                    <div class="user-dropdown">
+                        <button class="user-btn" id="user-menu-btn">
+                            <i class="fas fa-user"></i>
+                            <span id="user-name">User</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="dropdown-menu" id="user-menu">
+                            <a href="#" data-page="settings"><i class="fas fa-cog"></i> Settings</a>
+                            <a href="#" id="logout-link"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                        </div>
+                    </div>
+                </nav>
+            </header>
+
+            <main class="main">
+                <div class="dashboard-header">
+                    <div>
+                        <h1 id="farm-name">Farm Dashboard</h1>
+                        <p id="farm-subtitle">Smart farming expense management</p>
+                    </div>
+                    <div class="quick-actions">
+                        <button class="btn" data-modal="expense-modal">
+                            <i class="fas fa-plus"></i> Add Expense
+                        </button>
+                        <button class="btn secondary" data-modal="revenue-modal">
+                            <i class="fas fa-plus"></i> Add Revenue
+                        </button>
+                        <button class="btn secondary" onclick="exportCSV()">
+                            <i class="fas fa-download"></i> Export CSV
+                        </button>
+                        <button class="btn secondary" onclick="syncData()">
+                            <i class="fas fa-sync"></i> Sync
+                        </button>
+                        <button class="btn ai" onclick="predictExpense()">
+                            <i class="fas fa-brain"></i> AI Predict
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Summary Tiles -->
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-dollar-sign"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3>Total Farm Budget</h3>
+                            <p class="stat-value" id="total-budget-stat">$0</p>
+                            <p class="stat-subtitle">Planned spending limit</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-chart-pie"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3>Used Budget</h3>
+                            <p class="stat-value" id="used-budget-stat">$0</p>
+                            <p class="stat-subtitle">Total expenses to date</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-piggy-bank"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3>Remaining Budget</h3>
+                            <p class="stat-value" id="remaining-budget-stat">$0</p>
+                            <p class="stat-subtitle">Money left before overspend</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-calendar-alt"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3>Monthly Expenses</h3>
+                            <p class="stat-value" id="monthly-expenses-stat">$0</p>
+                            <p class="stat-subtitle">Current month burn rate</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-balance-scale"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3>Net Margin</h3>
+                            <p class="stat-value" id="net-margin-stat">$0</p>
+                            <p class="stat-subtitle">Profit/Loss this period</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-cow"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3>Cost Per Livestock Head</h3>
+                            <p class="stat-value" id="cost-per-head-stat">$0</p>
+                            <p class="stat-subtitle">Average cost optimization</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Charts Section -->
+                <div class="charts-section">
+                    <div class="chart-container">
+                        <div class="chart-header">
+                            <h3>Expenses Over Time</h3>
+                            <div class="chart-controls">
+                                <select id="month-selector">
+                                    <option value="all">All Time</option>
+                                    <option value="3">Last 3 Months</option>
+                                    <option value="6">Last 6 Months</option>
+                                    <option value="12">Last Year</option>
+                                </select>
+                                <select id="season-selector">
+                                    <option value="all">All Seasons</option>
+                                    <option value="planting">Planting</option>
+                                    <option value="growing">Growing</option>
+                                    <option value="harvest">Harvest</option>
+                                </select>
+                            </div>
+                        </div>
+                        <canvas id="expense-chart"></canvas>
+                    </div>
+                    <div class="chart-container">
+                        <div class="chart-header">
+                            <h3>Farm Category Breakdown</h3>
+                        </div>
+                        <canvas id="category-chart"></canvas>
+                        <div class="category-breakdown" id="category-breakdown">
+                            <!-- Category details will be populated here -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- AI Predictions Widget -->
+                <div class="ai-widget">
+                    <h3><i class="fas fa-brain"></i> AI Farm Insights</h3>
+                    <div class="ai-predictions">
+                        <div class="prediction-card">
+                            <div class="prediction-icon">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <div class="prediction-content">
+                                <h4>Predicted Expenses Next Month</h4>
+                                <p class="prediction-value" id="predicted-expenses">$2,450</p>
+                                <p class="prediction-note">Based on seasonal patterns</p>
+                            </div>
+                        </div>
+                        <div class="prediction-card">
+                            <div class="prediction-icon warning">
+                                <i class="fas fa-exclamation-triangle"></i>
+                            </div>
+                            <div class="prediction-content">
+                                <h4>Category Overspend Risk</h4>
+                                <p class="prediction-value" id="overspend-risk">Livestock Feed</p>
+                                <p class="prediction-note">High risk - monitor closely</p>
+                            </div>
+                        </div>
+                        <div class="prediction-card">
+                            <div class="prediction-icon success">
+                                <i class="fas fa-trophy"></i>
+                            </div>
+                            <div class="prediction-content">
+                                <h4>AI Budget Efficiency Score</h4>
+                                <p class="prediction-value" id="efficiency-score">87%</p>
+                                <p class="prediction-note">Above average performance</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Automation Status -->
+                <div class="automation-widget">
+                    <h3><i class="fas fa-cogs"></i> Automation Status</h3>
+                    <div class="automation-triggers">
+                        <div class="trigger-item">
+                            <span class="trigger-status active"></span>
+                            <span>Expense logged → Automation trigger</span>
+                        </div>
+                        <div class="trigger-item">
+                            <span class="trigger-status pending"></span>
+                            <span>Budget threshold alert pending</span>
+                        </div>
+                        <div class="trigger-item">
+                            <span class="trigger-status active"></span>
+                            <span>Daily sync schedule</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Expense Controls -->
+                <div class="expense-controls">
+                    <div class="controls-header">
+                        <h3>Expense Management</h3>
+                        <div class="filters">
+                            <input type="date" id="filter-start-date">
+                            <input type="date" id="filter-end-date">
+                            <select id="filter-category">
+                                <option value="all">All Categories</option>
+                                <option value="livestock_feed">Livestock Feed</option>
+                                <option value="crop_seeds">Crop Seeds</option>
+                                <option value="fertilizer">Fertilizer & Chemicals</option>
+                                <option value="veterinary">Veterinary / Animal Health</option>
+                                <option value="equipment">Equipment & Tools</option>
+                                <option value="fuel">Fuel & Transportation</option>
+                                <option value="maintenance">Maintenance & Repairs</option>
+                                <option value="labor">Labor</option>
+                                <option value="miscellaneous">Miscellaneous</option>
+                            </select>
+                            <select id="sort-option">
+                                <option value="date-desc">Newest First</option>
+                                <option value="date-asc">Oldest First</option>
+                                <option value="amount-desc">Highest Amount</option>
+                                <option value="amount-asc">Lowest Amount</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="table-container">
+                        <table class="expenses-table">
+                            <thead>
+                                <tr>
+                                    <th>Date</th>
+                                    <th>Category</th>
+                                    <th>Amount</th>
+                                    <th>Description</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="expenses-tbody">
+                                <!-- Expenses will be populated here -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Top Categories Panel -->
+                <div class="top-categories">
+                    <h3>Top 3 Expense Categories</h3>
+                    <div class="category-list" id="top-categories">
+                        <!-- Top categories will be populated here -->
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Livestock Page -->
+    <div id="livestock-page" class="page">
+        <div class="container">
+            <header class="header">
+                <div class="logo">
+                    <i class="fas fa-tractor"></i>
+                    <span>FarmExpense AI</span>
+                </div>
+                <nav class="nav">
+                    <button class="nav-btn" data-page="dashboard">Dashboard</button>
+                    <button class="nav-btn active" data-page="livestock">Livestock</button>
+                    <button class="nav-btn" data-page="processing">Processing & Logistics</button>
+                    <button class="nav-btn" data-page="settings">Settings</button>
+                    <button id="theme-toggle" class="nav-btn"><i class="fas fa-moon"></i></button>
+                    <button id="logout-btn" class="nav-btn">Logout</button>
+                </nav>
+            </header>
+
+            <main class="main">
+                <div class="dashboard-header">
+                    <h1>Livestock Management</h1>
+                    <button class="btn primary" data-modal="livestock-modal">Add Livestock</button>
+                </div>
+
+                <div class="table-container">
+                    <table class="livestock-table">
+                        <thead>
+                            <tr>
+                                <th>Type</th>
+                                <th>Breed</th>
+                                <th>Quantity</th>
+                                <th>Age (months)</th>
+                                <th>Weight (kg)</th>
+                                <th>Purchase Date</th>
+                                <th>Unit Price</th>
+                                <th>Total Value</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Livestock will be populated here -->
+                        </tbody>
+                    </table>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Processing Page -->
+    <div id="processing-page" class="page">
+        <div class="container">
+            <header class="header">
+                <div class="logo">
+                    <i class="fas fa-tractor"></i>
+                    <span>FarmExpense AI</span>
+                </div>
+                <nav class="nav">
+                    <button class="nav-btn" data-page="dashboard">Dashboard</button>
+                    <button class="nav-btn" data-page="livestock">Livestock</button>
+                    <button class="nav-btn active" data-page="processing">Processing</button>
+                    <button class="nav-btn" data-page="logistics">Logistics</button>
+                    <button class="nav-btn" data-page="settings">Settings</button>
+                    <button id="theme-toggle" class="nav-btn"><i class="fas fa-moon"></i></button>
+                    <button id="logout-btn" class="nav-btn">Logout</button>
+                </nav>
+            </header>
+
+            <main class="main">
+                <div class="dashboard-header">
+                    <h1>Processing Operations</h1>
+                    <p>Advanced processing workflow management</p>
+                    <div class="quick-actions">
+                        <button class="btn" data-modal="processing-modal">
+                            <i class="fas fa-plus"></i> Add Processing Activity
+                        </button>
+                        <button class="btn secondary" onclick="startBatchProcess()">
+                            <i class="fas fa-play"></i> Start Batch Process
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Processing Workflow Dashboard -->
+                <div class="processing-workflow">
+                    <div class="workflow-stages">
+                        <div class="stage-card active">
+                            <div class="stage-icon">
+                                <i class="fas fa-seedling"></i>
+                            </div>
+                            <h4>Raw Materials</h4>
+                            <p>Input inventory</p>
+                            <div class="stage-metrics">
+                                <span class="metric">1,250 kg</span>
+                                <span class="status ready">Ready</span>
+                            </div>
+                        </div>
+                        <div class="stage-card">
+                            <div class="stage-icon">
+                                <i class="fas fa-cogs"></i>
+                            </div>
+                            <h4>Processing</h4>
+                            <p>Active batches</p>
+                            <div class="stage-metrics">
+                                <span class="metric">3 batches</span>
+                                <span class="status processing">Processing</span>
+                            </div>
+                        </div>
+                        <div class="stage-card">
+                            <div class="stage-icon">
+                                <i class="fas fa-flask"></i>
+                            </div>
+                            <h4>Quality Control</h4>
+                            <p>Testing phase</p>
+                            <div class="stage-metrics">
+                                <span class="metric">85% pass</span>
+                                <span class="status pending">Pending</span>
+                            </div>
+                        </div>
+                        <div class="stage-card">
+                            <div class="stage-icon">
+                                <i class="fas fa-boxes"></i>
+                            </div>
+                            <h4>Packaging</h4>
+                            <p>Final products</p>
+                            <div class="stage-metrics">
+                                <span class="metric">450 units</span>
+                                <span class="status complete">Complete</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Processing Analytics -->
+                <div class="processing-analytics">
+                    <div class="analytics-grid">
+                        <div class="analytics-card">
+                            <h4>Efficiency Rate</h4>
+                            <div class="efficiency-gauge">
+                                <div class="gauge-value" style="--percentage: 87%">87%</div>
+                                <svg class="gauge-svg" viewBox="0 0 120 120">
+                                    <circle cx="60" cy="60" r="50" fill="none" stroke="var(--bg-tertiary)" stroke-width="8"/>
+                                    <circle cx="60" cy="60" r="50" fill="none" stroke="var(--primary-green)" stroke-width="8" stroke-dasharray="314" stroke-dashoffset="40.7" transform="rotate(-90 60 60)"/>
+                                </svg>
+                            </div>
+                            <p class="analytics-note">Above industry average</p>
+                        </div>
+                        <div class="analytics-card">
+                            <h4>Batch Success Rate</h4>
+                            <div class="success-rate">
+                                <div class="rate-bar">
+                                    <div class="rate-fill" style="width: 92%"></div>
+                                </div>
+                                <span class="rate-value">92%</span>
+                            </div>
+                            <p class="analytics-note">Last 30 days</p>
+                        </div>
+                        <div class="analytics-card">
+                            <h4>Equipment Utilization</h4>
+                            <div class="utilization-chart">
+                                <div class="utilization-item">
+                                    <span>Grinder</span>
+                                    <div class="util-bar">
+                                        <div class="util-fill" style="width: 78%"></div>
+                                    </div>
+                                    <span class="util-value">78%</span>
+                                </div>
+                                <div class="utilization-item">
+                                    <span>Freezer</span>
+                                    <div class="util-bar">
+                                        <div class="util-fill" style="width: 65%"></div>
+                                    </div>
+                                    <span class="util-value">65%</span>
+                                </div>
+                                <div class="utilization-item">
+                                    <span>Packaging</span>
+                                    <div class="util-bar">
+                                        <div class="util-fill" style="width: 89%"></div>
+                                    </div>
+                                    <span class="util-value">89%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Active Batches -->
+                <div class="active-batches">
+                    <h3>Active Processing Batches</h3>
+                    <div class="batches-grid">
+                        <div class="batch-card">
+                            <div class="batch-header">
+                                <h4>Batch #2024-001</h4>
+                                <span class="batch-status processing">Processing</span>
+                            </div>
+                            <div class="batch-details">
+                                <div class="batch-info">
+                                    <span>Product: Beef Patties</span>
+                                    <span>Quantity: 200 kg</span>
+                                    <span>Started: 2 hours ago</span>
+                                </div>
+                                <div class="batch-progress">
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" style="width: 65%"></div>
+                                    </div>
+                                    <span class="progress-text">65% Complete</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="batch-card">
+                            <div class="batch-header">
+                                <h4>Batch #2024-002</h4>
+                                <span class="batch-status quality">Quality Check</span>
+                            </div>
+                            <div class="batch-details">
+                                <div class="batch-info">
+                                    <span>Product: Chicken Nuggets</span>
+                                    <span>Quantity: 150 kg</span>
+                                    <span>Started: 4 hours ago</span>
+                                </div>
+                                <div class="batch-progress">
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" style="width: 80%"></div>
+                                    </div>
+                                    <span class="progress-text">80% Complete</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="batch-card">
+                            <div class="batch-header">
+                                <h4>Batch #2024-003</h4>
+                                <span class="batch-status complete">Packaging</span>
+                            </div>
+                            <div class="batch-details">
+                                <div class="batch-info">
+                                    <span>Product: Pork Chops</span>
+                                    <span>Quantity: 100 kg</span>
+                                    <span>Started: 6 hours ago</span>
+                                </div>
+                                <div class="batch-progress">
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" style="width: 95%"></div>
+                                    </div>
+                                    <span class="progress-text">95% Complete</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Processing History -->
+                <div class="processing-history">
+                    <h3>Processing History</h3>
+                    <div class="table-container">
+                        <table class="processing-table">
+                            <thead>
+                                <tr>
+                                    <th>Batch ID</th>
+                                    <th>Date</th>
+                                    <th>Type</th>
+                                    <th>Product</th>
+                                    <th>Input Qty</th>
+                                    <th>Output Qty</th>
+                                    <th>Efficiency</th>
+                                    <th>Cost</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Processing activities will be populated here -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Logistics Page -->
+    <div id="logistics-page" class="page">
+        <div class="container">
+            <header class="header">
+                <div class="logo">
+                    <i class="fas fa-tractor"></i>
+                    <span>FarmExpense AI</span>
+                </div>
+                <nav class="nav">
+                    <button class="nav-btn" data-page="dashboard">Dashboard</button>
+                    <button class="nav-btn" data-page="livestock">Livestock</button>
+                    <button class="nav-btn" data-page="processing">Processing</button>
+                    <button class="nav-btn active" data-page="logistics">Logistics</button>
+                    <button class="nav-btn" data-page="settings">Settings</button>
+                    <button id="theme-toggle" class="nav-btn"><i class="fas fa-moon"></i></button>
+                    <button id="logout-btn" class="nav-btn">Logout</button>
+                </nav>
+            </header>
+
+            <main class="main">
+                <div class="dashboard-header">
+                    <h1>Logistics & Shipping</h1>
+                    <p>Manage transportation and delivery operations</p>
+                    <div class="quick-actions">
+                        <button class="btn" data-modal="logistics-modal">
+                            <i class="fas fa-plus"></i> Add Logistics Activity
+                        </button>
+                        <button class="btn secondary" onclick="trackShipments()">
+                            <i class="fas fa-search"></i> Track Shipments
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Logistics Overview -->
+                <div class="logistics-overview">
+                    <div class="overview-cards">
+                        <div class="overview-card">
+                            <div class="overview-icon">
+                                <i class="fas fa-truck"></i>
+                            </div>
+                            <div class="overview-content">
+                                <h4>Active Shipments</h4>
+                                <p class="overview-value">12</p>
+                                <p class="overview-note">In transit</p>
+                            </div>
+                        </div>
+                        <div class="overview-card">
+                            <div class="overview-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="overview-content">
+                                <h4>On-Time Delivery</h4>
+                                <p class="overview-value">94%</p>
+                                <p class="overview-note">This month</p>
+                            </div>
+                        </div>
+                        <div class="overview-card">
+                            <div class="overview-icon">
+                                <i class="fas fa-dollar-sign"></i>
+                            </div>
+                            <div class="overview-content">
+                                <h4>Shipping Costs</h4>
+                                <p class="overview-value">$2,450</p>
+                                <p class="overview-note">This month</p>
+                            </div>
+                        </div>
+                        <div class="overview-card">
+                            <div class="overview-icon">
+                                <i class="fas fa-route"></i>
+                            </div>
+                            <div class="overview-content">
+                                <h4>Routes Optimized</h4>
+                                <p class="overview-value">8</p>
+                                <p class="overview-note">Active routes</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Logistics Activities -->
+                <div class="logistics-activities">
+                    <h3>Logistics Activities</h3>
+                    <div class="table-container">
+                        <table class="logistics-table">
+                            <thead>
+                                <tr>
+                                    <th>Date</th>
+                                    <th>Type</th>
+                                    <th>Destination</th>
+                                    <th>Quantity</th>
+                                    <th>Carrier</th>
+                                    <th>Tracking #</th>
+                                    <th>Cost</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Logistics activities will be populated here -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Logistics Partners -->
+                <div class="logistics-partners-section">
+                    <h3><i class="fas fa-handshake"></i> Logistics Partners</h3>
+                    <p class="section-subtitle">Connect with trusted carriers for your shipping needs</p>
+
+                    <!-- International Carriers -->
+                    <div class="carrier-category">
+                        <h4>International & Express</h4>
+                        <div class="logistics-links">
+                            <a href="https://www.fedex.com" target="_blank" class="logistics-link premium">
+                                <div class="carrier-logo">
+                                    <i class="fas fa-truck"></i>
+                                </div>
+                                <div class="link-content">
+                                    <strong>FedEx</strong>
+                                    <span>Express & Ground Shipping</span>
+                                    <small>Global network, fast delivery</small>
+                                </div>
+                                <div class="carrier-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                            </a>
+                            <a href="https://www.ups.com" target="_blank" class="logistics-link premium">
+                                <div class="carrier-logo">
+                                    <i class="fas fa-shipping-fast"></i>
+                                </div>
+                                <div class="link-content">
+                                    <strong>UPS</strong>
+                                    <span>Worldwide Delivery</span>
+                                    <small>Reliable package delivery</small>
+                                </div>
+                                <div class="carrier-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </a>
+                            <a href="https://www.dhl.com" target="_blank" class="logistics-link premium">
+                                <div class="carrier-logo">
+                                    <i class="fas fa-plane"></i>
+                                </div>
+                                <div class="link-content">
+                                    <strong>DHL</strong>
+                                    <span>International Shipping</span>
+                                    <small>Express worldwide delivery</small>
+                                </div>
+                                <div class="carrier-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                            </a>
+                            <a href="https://www.tnt.com" target="_blank" class="logistics-link premium">
+                                <div class="carrier-logo">
+                                    <i class="fas fa-truck"></i>
+                                </div>
+                                <div class="link-content">
+                                    <strong>TNT</strong>
+                                    <span>Express Delivery</span>
+                                    <small>Global express shipping solutions</small>
+                                </div>
+                                <div class="carrier-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                </div>
+                            </a>
+                            <a href="https://www.aramex.com" target="_blank" class="logistics-link premium">
+                                <div class="carrier-logo">
+                                    <i class="fas fa-globe"></i>
+                                </div>
+                                <div class="link-content">
+                                    <strong>Aramex</strong>
+                                    <span>Global Logistics</span>
+                                    <small>International shipping & logistics</small>
+                                </div>
+                                <div class="carrier-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Canadian Carriers -->
+                    <div class="carrier-category">
+                        <h4>Canadian Carriers</h4>
+                        <div class="logistics-links">
+                            <a href="https://www.purolator.com" target="_blank" class="logistics-link">
+                                <div class="carrier-logo">
+                                    <i class="fas fa-box"></i>
+                                </div>
+                                <div class="link-content">
+                                    <strong>Purolator</strong>
+                                    <span>Canadian Shipping</span>
+                                    <small>Canada-wide delivery services</small>
+                                </div>
+                                <div class="carrier-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </a>
+                            <a href="https://www.canadapost.ca" target="_blank" class="logistics-link">
+                                <div class="carrier-logo">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div class="link-content">
+                                    <strong>Canada Post</strong>
+                                    <span>Postal Services</span>
+                                    <small>Letters, packages & freight</small>
+                                </div>
+                                <div class="carrier-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                </div>
+                            </a>
+                            <a href="https://www.canpar.com" target="_blank" class="logistics-link">
+                                <div class="carrier-logo">
+                                    <i class="fas fa-truck"></i>
+                                </div>
+                                <div class="link-content">
+                                    <strong>Canpar</strong>
+                                    <span>Ground Shipping</span>
+                                    <small>Business delivery solutions</small>
+                                </div>
+                                <div class="carrier-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Regional & Specialized -->
+                    <div class="carrier-category">
+                        <h4>Regional & Specialized</h4>
+                        <div class="logistics-links">
+                            <a href="https://www.jbhunt.com" target="_blank" class="logistics-link">
+                                <div class="carrier-logo">
+                                    <i class="fas fa-truck-moving"></i>
+                                </div>
+                                <div class="link-content">
+                                    <strong>J.B. Hunt</strong>
+                                    <span>Trucking Solutions</span>
+                                    <small>Intermodal transportation</small>
+                                </div>
+                                <div class="carrier-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                </div>
+                            </a>
+                            <a href="https://www.schneider.com" target="_blank" class="logistics-link">
+                                <div class="carrier-logo">
+                                    <i class="fas fa-route"></i>
+                                </div>
+                                <div class="link-content">
+                                    <strong>Schneider</strong>
+                                    <span>Logistics Management</span>
+                                    <small>Supply chain solutions</small>
+                                </div>
+                                <div class="carrier-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                </div>
+                            </a>
+                            <a href="https://www.estes-express.com" target="_blank" class="logistics-link">
+                                <div class="carrier-logo">
+                                    <i class="fas fa-shipping-fast"></i>
+                                </div>
+                                <div class="link-content">
+                                    <strong>Estes</strong>
+                                    <span>Regional Trucking</span>
+                                    <small>Less-than-truckload shipping</small>
+                                </div>
+                                <div class="carrier-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Carrier Performance Metrics -->
+                    <div class="carrier-performance">
+                        <h4>Carrier Performance Overview</h4>
+                        <div class="performance-grid">
+                            <div class="performance-item">
+                                <div class="performance-icon">
+                                    <i class="fas fa-clock"></i>
+                                </div>
+                                <div class="performance-content">
+                                    <h5>On-Time Delivery</h5>
+                                    <div class="performance-bar">
+                                        <div class="performance-fill" style="width: 94%"></div>
+                                    </div>
+                                    <span class="performance-value">94%</span>
+                                </div>
+                            </div>
+                            <div class="performance-item">
+                                <div class="performance-icon">
+                                    <i class="fas fa-shield-alt"></i>
+                                </div>
+                                <div class="performance-content">
+                                    <h5>Damage Rate</h5>
+                                    <div class="performance-bar">
+                                        <div class="performance-fill low" style="width: 2%"></div>
+                                    </div>
+                                    <span class="performance-value">0.2%</span>
+                                </div>
+                            </div>
+                            <div class="performance-item">
+                                <div class="performance-icon">
+                                    <i class="fas fa-dollar-sign"></i>
+                                </div>
+                                <div class="performance-content">
+                                    <h5>Average Cost/kg</h5>
+                                    <div class="performance-bar">
+                                        <div class="performance-fill" style="width: 75%"></div>
+                                    </div>
+                                    <span class="performance-value">$1.25</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Route Optimization -->
+                <div class="route-optimization">
+                    <h3>Route Optimization</h3>
+                    <div class="route-map-placeholder">
+                        <div class="map-placeholder">
+                            <i class="fas fa-map-marked-alt"></i>
+                            <p>Interactive route planning coming soon</p>
+                            <small>Optimize delivery routes for cost savings</small>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Settings Page -->
+    <div id="settings-page" class="page">
+        <div class="container">
+            <header class="header">
+                <div class="logo">
+                    <i class="fas fa-tractor"></i>
+                    <span>FarmExpense AI</span>
+                </div>
+                <nav class="nav">
+                    <button class="nav-btn" data-page="dashboard">Dashboard</button>
+                    <button class="nav-btn" data-page="livestock">Livestock</button>
+                    <button class="nav-btn" data-page="processing">Processing & Logistics</button>
+                    <button class="nav-btn active" data-page="settings">Settings</button>
+                    <button id="theme-toggle" class="nav-btn"><i class="fas fa-moon"></i></button>
+                    <button id="logout-btn" class="nav-btn">Logout</button>
+                </nav>
+            </header>
+
+            <main class="main">
+                <div class="settings-section">
+                    <h1>Settings</h1>
+
+                    <div class="settings-card">
+                        <h3>Profile Information</h3>
+                        <form id="settings-form">
+                            <div class="form-group">
+                                <label for="settings-name">Full Name</label>
+                                <input type="text" id="settings-name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="settings-farm">Farm Name</label>
+                                <input type="text" id="settings-farm" name="farm" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="settings-email">Email</label>
+                                <input type="email" id="settings-email" name="email" required>
+                            </div>
+                            <button type="submit" class="btn primary">Update Profile</button>
+                        </form>
+                    </div>
+
+                    <div class="settings-card">
+                        <h3>Budget Settings</h3>
+                        <form id="budget-form">
+                            <div class="form-group">
+                                <label for="total-budget">Total Budget ($)</label>
+                                <input type="number" id="total-budget" name="total_budget" min="0" step="0.01" required>
+                            </div>
+                            <button type="submit" class="btn primary">Update Budget</button>
+                        </form>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Modals -->
+    <!-- Expense Modal -->
+    <div id="expense-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Add Expense</h3>
+                <span class="close-btn">&times;</span>
+            </div>
+            <form id="expense-form">
+                <div class="form-group">
+                    <label for="expense-category">Category</label>
+                    <select id="expense-category" name="category" required>
+                        <option value="">Select Category</option>
+                        <option value="livestock_feed">Livestock Feed</option>
+                        <option value="crop_seeds">Crop Seeds</option>
+                        <option value="fertilizer">Fertilizer & Chemicals</option>
+                        <option value="veterinary">Veterinary / Animal Health</option>
+                        <option value="equipment">Equipment & Tools</option>
+                        <option value="fuel">Fuel & Transportation</option>
+                        <option value="maintenance">Maintenance & Repairs</option>
+                        <option value="labor">Labor</option>
+                        <option value="miscellaneous">Miscellaneous</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="expense-amount">Amount ($)</label>
+                    <input type="number" id="expense-amount" name="amount" min="0" step="0.01" required>
+                </div>
+                <div class="form-group">
+                    <label for="expense-date">Date</label>
+                    <input type="date" id="expense-date" name="date" required>
+                </div>
+                <div class="form-group">
+                    <label for="expense-description">Description</label>
+                    <textarea id="expense-description" name="description" rows="3"></textarea>
+                </div>
+                <div class="modal-actions">
+                    <button type="button" class="btn" onclick="closeModal()">Cancel</button>
+                    <button type="submit" class="btn primary">Add Expense</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Revenue Modal -->
+    <div id="revenue-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Add Revenue</h3>
+                <span class="close-btn">&times;</span>
+            </div>
+            <form id="revenue-form">
+                <div class="form-group">
+                    <label for="revenue-category">Category</label>
+                    <select id="revenue-category" name="category" required>
+                        <option value="">Select Category</option>
+                        <option value="crop_sales">Crop Sales</option>
+                        <option value="livestock_sales">Livestock Sales</option>
+                        <option value="dairy_products">Dairy Products</option>
+                        <option value="wool_sales">Wool Sales</option>
+                        <option value="subsidies">Government Subsidies</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="revenue-amount">Amount ($)</label>
+                    <input type="number" id="revenue-amount" name="amount" min="0" step="0.01" required>
+                </div>
+                <div class="form-group">
+                    <label for="revenue-date">Date</label>
+                    <input type="date" id="revenue-date" name="date" required>
+                </div>
+                <div class="form-group">
+                    <label for="revenue-description">Description</label>
+                    <textarea id="revenue-description" name="description" rows="3"></textarea>
+                </div>
+                <div class="modal-actions">
+                    <button type="button" class="btn" onclick="closeModal()">Cancel</button>
+                    <button type="submit" class="btn primary">Add Revenue</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Livestock Modal -->
+    <div id="livestock-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Add Livestock</h3>
+                <span class="close-btn">&times;</span>
+            </div>
+            <form id="livestock-form">
+                <div class="form-group">
+                    <label for="livestock-type">Type</label>
+                    <select id="livestock-type" name="type" required>
+                        <option value="">Select Type</option>
+                        <option value="cattle">Cattle</option>
+                        <option value="sheep">Sheep</option>
+                        <option value="goats">Goats</option>
+                        <option value="pigs">Pigs</option>
+                        <option value="chickens">Chickens</option>
+                        <option value="horses">Horses</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="livestock-breed">Breed</label>
+                    <input type="text" id="livestock-breed" name="breed">
+                </div>
+                <div class="form-group">
+                    <label for="livestock-quantity">Quantity</label>
+                    <input type="number" id="livestock-quantity" name="quantity" min="1" required>
+                </div>
+                <div class="form-group">
+                    <label for="livestock-age">Age (months)</label>
+                    <input type="number" id="livestock-age" name="age" min="0">
+                </div>
+                <div class="form-group">
+                    <label for="livestock-weight">Average Weight (kg)</label>
+                    <input type="number" id="livestock-weight" name="weight" min="0" step="0.1">
+                </div>
+                <div class="form-group">
+                    <label for="livestock-purchase-date">Purchase Date</label>
+                    <input type="date" id="livestock-purchase-date" name="purchase_date" required>
+                </div>
+                <div class="form-group">
+                    <label for="livestock-purchase-price">Purchase Price per Unit ($)</label>
+                    <input type="number" id="livestock-purchase-price" name="purchase_price" min="0" step="0.01" required>
+                </div>
+                <div class="form-group">
+                    <label for="livestock-notes">Notes</label>
+                    <textarea id="livestock-notes" name="notes" rows="3"></textarea>
+                </div>
+                <div class="modal-actions">
+                    <button type="button" class="btn" onclick="closeModal()">Cancel</button>
+                    <button type="submit" class="btn primary">Add Livestock</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Processing Modal -->
+    <div id="processing-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Add Processing Activity</h3>
+                <span class="close-btn">&times;</span>
+            </div>
+            <form id="processing-form">
+                <div class="form-group">
+                    <label for="processing-date">Date</label>
+                    <input type="date" id="processing-date" name="date" required>
+                </div>
+                <div class="form-group">
+                    <label for="processing-type">Type</label>
+                    <select id="processing-type" name="type" required>
+                        <option value="">Select Type</option>
+                        <option value="slaughter">Slaughter</option>
+                        <option value="packaging">Packaging</option>
+                        <option value="freezing">Freezing</option>
+                        <option value="drying">Drying</option>
+                        <option value="grinding">Grinding</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="processing-product">Product</label>
+                    <input type="text" id="processing-product" name="product" required>
+                </div>
+                <div class="form-group">
+                    <label for="processing-quantity">Quantity</label>
+                    <input type="number" id="processing-quantity" name="quantity" min="0" step="0.1" required>
+                </div>
+                <div class="form-group">
+                    <label for="processing-cost">Cost ($)</label>
+                    <input type="number" id="processing-cost" name="cost" min="0" step="0.01" required>
+                </div>
+                <div class="form-group">
+                    <label for="processing-description">Description</label>
+                    <textarea id="processing-description" name="description" rows="3"></textarea>
+                </div>
+                <div class="modal-actions">
+                    <button type="button" class="btn" onclick="closeModal()">Cancel</button>
+                    <button type="submit" class="btn primary">Add Processing Activity</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Logistics Modal -->
+    <div id="logistics-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Add Logistics Expense</h3>
+                <span class="close-btn">&times;</span>
+            </div>
+            <form id="logistics-form">
+                <div class="form-group">
+                    <label for="logistics-date">Date</label>
+                    <input type="date" id="logistics-date" name="date" required>
+                </div>
+                <div class="form-group">
+                    <label for="logistics-category">Category</label>
+                    <select id="logistics-category" name="category" required>
+                        <option value="">Select Category</option>
+                        <option value="transportation">Transportation</option>
+                        <option value="storage">Storage</option>
+                        <option value="shipping">Shipping</option>
+                        <option value="warehousing">Warehousing</option>
+                        <option value="fuel">Fuel</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="logistics-amount">Amount ($)</label>
+                    <input type="number" id="logistics-amount" name="amount" min="0" step="0.01" required>
+                </div>
+                <div class="form-group">
+                    <label for="logistics-description">Description</label>
+                    <textarea id="logistics-description" name="description" rows="3"></textarea>
+                </div>
+                <div class="modal-actions">
+                    <button type="button" class="btn" onclick="closeModal()">Cancel</button>
+                    <button type="submit" class="btn primary">Add Logistics Expense</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Edit Modals -->
+    <div id="edit-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Edit Expense</h3>
+                <span class="close-btn">&times;</span>
+            </div>
+            <form id="edit-expense-form">
+                <input type="hidden" id="edit-id" name="id">
+                <div class="form-group">
+                    <label for="edit-category">Category</label>
+                    <select id="edit-category" name="category" required>
+                        <option value="livestock_feed">Livestock Feed</option>
+                        <option value="crop_seeds">Crop Seeds</option>
+                        <option value="fertilizer">Fertilizer & Chemicals</option>
+                        <option value="veterinary">Veterinary / Animal Health</option>
+                        <option value="equipment">Equipment & Tools</option>
+                        <option value="fuel">Fuel & Transportation</option>
+                        <option value="maintenance">Maintenance & Repairs</option>
+                        <option value="labor">Labor</option>
+                        <option value="miscellaneous">Miscellaneous</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="edit-amount">Amount ($)</label>
+                    <input type="number" id="edit-amount" name="amount" min="0" step="0.01" required>
+                </div>
+                <div class="form-group">
+                    <label for="edit-date">Date</label>
+                    <input type="date" id="edit-date" name="date" required>
+                </div>
+                <div class="form-group">
+                    <label for="edit-description">Description</label>
+                    <textarea id="edit-description" name="description" rows="3"></textarea>
+                </div>
+                <div class="modal-actions">
+                    <button type="button" class="btn" onclick="closeModal()">Cancel</button>
+                    <button type="submit" class="btn primary">Update Expense</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="edit-revenue-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Edit Revenue</h3>
+                <span class="close-btn">&times;</span>
+            </div>
+            <form id="edit-revenue-form">
+                <input type="hidden" id="edit-revenue-id" name="id">
+                <div class="form-group">
+                    <label for="edit-revenue-category">Category</label>
+                    <select id="edit-revenue-category" name="category" required>
+                        <option value="crop_sales">Crop Sales</option>
+                        <option value="livestock_sales">Livestock Sales</option>
+                        <option value="dairy_products">Dairy Products</option>
+                        <option value="wool_sales">Wool Sales</option>
+                        <option value="subsidies">Government Subsidies</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="edit-revenue-amount">Amount ($)</label>
+                    <input type="number" id="edit-revenue-amount" name="amount" min="0" step="0.01" required>
+                </div>
+                <div class="form-group">
+                    <label for="edit-revenue-date">Date</label>
+                    <input type="date" id="edit-revenue-date" name="date" required>
+                </div>
+                <div class="form-group">
+                    <label for="edit-revenue-description">Description</label>
+                    <textarea id="edit-revenue-description" name="description" rows="3"></textarea>
+                </div>
+                <div class="modal-actions">
+                    <button type="button" class="btn" onclick="closeModal()">Cancel</button>
+                    <button type="submit" class="btn primary">Update Revenue</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="edit-livestock-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Edit Livestock</h3>
+                <span class="close-btn">&times;</span>
+            </div>
+            <form id="edit-livestock-form">
+                <input type="hidden" id="edit-livestock-id" name="id">
+                <div class="form-group">
+                    <label for="edit-livestock-type">Type</label>
+                    <select id="edit-livestock-type" name="type" required>
+                        <option value="cattle">Cattle</option>
+                        <option value="sheep">Sheep</option>
+                        <option value="goats">Goats</option>
+                        <option value="pigs">Pigs</option>
+                        <option value="chickens">Chickens</option>
+                        <option value="horses">Horses</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="edit-livestock-breed">Breed</label>
+                    <input type="text" id="edit-livestock-breed" name="breed">
+                </div>
+                <div class="form-group">
+                    <label for="edit-livestock-quantity">Quantity</label>
+                    <input type="number" id="edit-livestock-quantity" name="quantity" min="1" required>
+                </div>
+                <div class="form-group">
+                    <label for="edit-livestock-age">Age (months)</label>
+                    <input type="number" id="edit-livestock-age" name="age" min="0">
+                </div>
+                <div class="form-group">
+                    <label for="edit-livestock-weight">Average Weight (kg)</label>
+                    <input type="number" id="edit-livestock-weight" name="weight" min="0" step="0.1">
+                </div>
+                <div class="form-group">
+                    <label for="edit-livestock-purchase-date">Purchase Date</label>
+                    <input type="date" id="edit-livestock-purchase-date" name="purchase_date" required>
+                </div>
+                <div class="form-group">
+                    <label for="edit-livestock-purchase-price">Purchase Price per Unit ($)</label>
+                    <input type="number" id="edit-livestock-purchase-price" name="purchase_price" min="0" step="0.01" required>
+                </div>
+                <div class="form-group">
+                    <label for="edit-livestock-notes">Notes</label>
+                    <textarea id="edit-livestock-notes" name="notes" rows="3"></textarea>
+                </div>
+                <div class="modal-actions">
+                    <button type="button" class="btn" onclick="closeModal()">Cancel</button>
+                    <button type="submit" class="btn primary">Update Livestock</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Edit Processing Modal -->
+    <div id="edit-processing-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Edit Processing Activity</h3>
+                <span class="close-btn">&times;</span>
+            </div>
+            <form id="edit-processing-form">
+                <input type="hidden" id="edit-processing-id" name="id">
+                <div class="form-group">
+                    <label for="edit-processing-date">Date</label>
+                    <input type="date" id="edit-processing-date" name="date" required>
+                </div>
+                <div class="form-group">
+                    <label for="edit-processing-type">Type</label>
+                    <select id="edit-processing-type" name="type" required>
+                        <option value="slaughter">Slaughter</option>
+                        <option value="packaging">Packaging</option>
+                        <option value="freezing">Freezing</option>
+                        <option value="drying">Drying</option>
+                        <option value="grinding">Grinding</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="edit-processing-product">Product</label>
+                    <input type="text" id="edit-processing-product" name="product" required>
+                </div>
+                <div class="form-group">
+                    <label for="edit-processing-quantity">Quantity</label>
+                    <input type="number" id="edit-processing-quantity" name="quantity" min="0" step="0.1" required>
+                </div>
+                <div class="form-group">
+                    <label for="edit-processing-cost">Cost ($)</label>
+                    <input type="number" id="edit-processing-cost" name="cost" min="0" step="0.01" required>
+                </div>
+                <div class="form-group">
+                    <label for="edit-processing-description">Description</label>
+                    <textarea id="edit-processing-description" name="description" rows="3"></textarea>
+                </div>
+                <div class="modal-actions">
+                    <button type="button" class="btn" onclick="closeModal()">Cancel</button>
+                    <button type="submit" class="btn primary">Update Processing Activity</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Edit Logistics Modal -->
+    <div id="edit-logistics-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Edit Logistics Expense</h3>
+                <span class="close-btn">&times;</span>
+            </div>
+            <form id="edit-logistics-form">
+                <input type="hidden" id="edit-logistics-id" name="id">
+                <div class="form-group">
+                    <label for="edit-logistics-date">Date</label>
+                    <input type="date" id="edit-logistics-date" name="date" required>
+                </div>
+                <div class="form-group">
+                    <label for="edit-logistics-category">Category</label>
+                    <select id="edit-logistics-category" name="category" required>
+                        <option value="transportation">Transportation</option>
+                        <option value="storage">Storage</option>
+                        <option value="shipping">Shipping</option>
+                        <option value="warehousing">Warehousing</option>
+                        <option value="fuel">Fuel</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="edit-logistics-amount">Amount ($)</label>
+                    <input type="number" id="edit-logistics-amount" name="amount" min="0" step="0.01" required>
+                </div>
+                <div class="form-group">
+                    <label for="edit-logistics-description">Description</label>
+                    <textarea id="edit-logistics-description" name="description" rows="3"></textarea>
+                </div>
+                <div class="modal-actions">
+                    <button type="button" class="btn" onclick="closeModal()">Cancel</button>
+                    <button type="submit" class="btn primary">Update Logistics Expense</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Notifications -->
+    <div id="notification-container"></div>
+
+    <script src="api_client.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
